@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站监控</title>
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org/",
+        "@type": "ImageObject",
+        "name": "2024-10-24.zip 存档项目",
+        "contentUrl": "https://2024-10-24.zip/images/logo.jpg",
+        "description": "2024-10-24.zip 关于网站存档的故事与意义。"
+      },
+      {
+        "@context": "https://schema.org/",
+        "@type": "ImageObject",
+        "name": "ZERA 宇宙探索核心视觉",
+        "contentUrl": "https://ads.2024-10-24.zip/images/ZERA.jpg",
+        "description": "探索ZERA宇宙的无限可能，开启属于你的精彩旅程。"
+      }
+    ]
+    </script>
+
+    <style>
+        :root {
+            --primary-text: #1d1d1f;
+            --secondary-text: #424245;
+            --accent: #0071e3;
+            --bg: #fbfbfd;
+            --card-bg: #ffffff;
+            --online: #28cd41;
+            --offline: #ff3b30;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--primary-text);
+            font-family: "SF Pro SC", "SF Pro Display", "PingFang SC", system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 24px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: var(--secondary-text);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .site-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 4px 10px rgba(0,0,0,0.03);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .site-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            border-color: rgba(0,0,0,0.06);
+        }
+
+        .image-wrapper {
+            width: 200px;
+            height: 200px;
+            flex-shrink: 0;
+            aspect-ratio: 1 / 1;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f5f5f7;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .site-card:hover .image-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        .site-title {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+        }
+
+        .site-url {
+            color: var(--accent);
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .site-desc {
+            font-size: 14px;
+            color: var(--secondary-text);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            max-width: 420px;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: #f5f5f7;
+            border-radius: 8px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #d2d2d7;
+            position: relative;
+        }
+
+        .dot.online {
+            background: var(--online);
+        }
+
+        .dot.online::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--online);
+            border-radius: 50%;
+            animation: ripple 2s infinite;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+
+        .dot.offline {
+            background: var(--offline);
+        }
+
+        .status-text {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--secondary-text);
+        }
+
+        @media (max-width: 650px) {
+            .site-card {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                text-align: center;
+            }
+            .image-wrapper {
+                width: 100%;
+                max-width: 200px;
+                height: 200px;
+            }
+            .site-desc {
+                margin: 0 auto 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <p>实时链路 · 数字资产</p>
+    </header>
+
+    <article class="site-card">
+        <div class="image-wrapper">
+            <img src="https://2024-10-24.zip/images/logo.jpg" alt="2024-10-24.zip 存档项目：关于网站存档的故事与意义">
+        </div>
+        <div class="content">
+            <h2 class="site-title">2024-10-24.zip 存档</h2>
+            <a href="https://2024-10-24.zip" class="site-url">2024-10-24.zip</a>
+            <p class="site-desc">记录数字时代的脉络。通过存档专题，见证数字记忆的深度与时间的故事。</p>
+            <div class="status-pill">
+                <div class="dot" id="dot-archive"></div>
+                <span id="label-archive" class="status-text">同步状态</span>
+            </div>
+        </div>
+    </article>
+    
+    <article class="site-card">
+        <div class="image-wrapper">
+            <img src="https://ads.2024-10-24.zip/images/ZERA.jpg" alt="ZERA 网站视觉：探索ZERA宇宙的无限可能，开启属于你的精彩旅程">
+        </div>
+        <div class="content">
+            <h2 class="site-title">ZERA 宇宙探索</h2>
+            <a href="https://play.yu2000.cn" class="site-url">play.yu2000.cn</a>
+            <p class="site-desc">探索 ZERA 宇宙的无限可能。构建沉浸式数字体验，开启属于您的未来旅程。</p>
+            <div class="status-pill">
+                <div class="dot" id="dot-zera"></div>
+                <span id="label-zera" class="status-text">同步状态</span>
+            </div>
+        </div>
+    </article>
+</div>
+
+<script>
+    const sites = [
+        { id: 'archive', url: 'https://ads.2024-10-24.zip/ads.2024-10-24.zip.ico' },
+        { id: 'zera', url: 'https://play.yu2000.cn/ads.2024-10-24.zip.ico' }
+    ];
+
+    function update(id, ok) {
+        const dot = document.getElementById(`dot-${id}`);
+        const text = document.getElementById(`label-${id}`);
+        if(dot && text) {
+            dot.className = ok ? 'dot online' : 'dot offline';
+            text.innerText = ok ? '在线' : '离线';
+        }
+    }
+
+    function check() {
+        sites.forEach(site => {
+            const img = new Image();
+            img.onload = () => update(site.id, true);
+            img.onerror = () => update(site.id, false);
+            img.src = `${site.url}?v=${Date.now()}`;
+        });
+    }
+
+    check();
+    setInterval(check, 60000);
+</script>
+
+</body>
+</html>
