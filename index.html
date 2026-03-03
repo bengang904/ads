@@ -4,24 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网站监控</title>
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org/",
-        "@type": "ImageObject",
-        "name": "2024-10-24.zip 存档项目",
-        "contentUrl": "https://2024-10-24.zip/images/logo.jpg",
-        "description": "2024-10-24.zip 关于网站存档的故事与意义。"
+
+
+    <!-- Google图片搜索抓取强化 -->
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ImageObject",
+      "@id": "https://2024-10-24.zip/images/logo.jpg",
+      "name": "2024-10-24.zip 存档项目",
+      "contentUrl": "https://2024-10-24.zip/images/logo.jpg",
+      "thumbnailUrl": "https://2024-10-24.zip/images/logo.jpg",
+      "description": "2024-10-24.zip 关于网站存档的故事与意义。",
+      "inLanguage": "zh-CN",
+      "width": 300,
+      "height": 300,
+      "creator": {
+        "@type": "Organization",
+        "name": "2024-10-24.zip"
       },
-      {
-        "@context": "https://schema.org/",
-        "@type": "ImageObject",
-        "name": "ZERA 宇宙探索核心视觉",
-        "contentUrl": "https://ads.2024-10-24.zip/images/ZERA.jpg",
-        "description": "探索ZERA宇宙的无限可能，开启属于你的精彩旅程。"
-      }
-    ]
-    </script>
+      "license": "https://2024-10-24.zip"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://ads.2024-10-24.zip/images/ZERA.jpg",
+      "name": "ZERA 宇宙探索核心视觉",
+      "contentUrl": "https://ads.2024-10-24.zip/images/ZERA.jpg",
+      "thumbnailUrl": "https://ads.2024-10-24.zip/images/ZERA.jpg",
+      "description": "探索 ZERA 宇宙的无限可能，开启属于你的精彩旅程。",
+      "inLanguage": "zh-CN",
+      "width": 300,
+      "height": 300,
+      "creator": {
+        "@type": "Organization",
+        "name": "ZERA"
+      },
+      "license": "https://play.yu2000.cn"
+    }
+  ]
+}
+</script>
 
     <style>
         :root {
@@ -210,7 +236,14 @@
 
     <article class="site-card">
         <div class="image-wrapper">
-            <img src="https://2024-10-24.zip/images/logo.jpg" alt="2024-10-24.zip 存档项目：关于网站存档的故事与意义">
+            <img 
+  src="https://2024-10-24.zip/images/logo.jpg"
+  alt="2024-10-24.zip 存档项目：关于网站存档的故事与意义"
+  title="2024-10-24.zip 存档"
+  loading="eager"
+  width="300"
+  height="300"
+>
         </div>
         <div class="content">
             <h2 class="site-title">2024-10-24.zip 存档</h2>
@@ -225,7 +258,16 @@
     
     <article class="site-card">
         <div class="image-wrapper">
-            <img src="https://ads.2024-10-24.zip/images/ZERA.jpg" alt="ZERA 网站视觉：探索ZERA宇宙的无限可能，开启属于你的精彩旅程">
+           <img 
+  src="https://ads.2024-10-24.zip/images/ZERA.jpg"
+  alt="ZERA 宇宙探索核心视觉，沉浸式数字宇宙体验"
+  title="ZERA 宇宙探索核心视觉"
+  width="300"
+  height="300"
+  loading="eager"
+  decoding="async"
+  fetchpriority="high"
+>
         </div>
         <div class="content">
             <h2 class="site-title">ZERA 宇宙探索</h2>
@@ -254,17 +296,23 @@
         }
     }
 
-    function check() {
-        sites.forEach(site => {
-            const img = new Image();
-            img.onload = () => update(site.id, true);
-            img.onerror = () => update(site.id, false);
-            img.src = `${site.url}?v=${Date.now()}`;
-        });
+    async function check() {
+        for (const site of sites) {
+            try {
+                const response = await fetch(`${site.url}?v=${Date.now()}`, {
+                    method: 'GET',
+                    mode: 'no-cors',
+                    cache: 'no-store'
+                });
+                update(site.id, true);
+            } catch (error) {
+                update(site.id, false);
+            }
+        }
     }
 
     check();
-    setInterval(check, 60000);
+setInterval(check, 3000);
 </script>
 
 </body>
